@@ -1,21 +1,18 @@
 package com.devsuperior.dscommerce.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tab_user")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "tab_user")
 public class User {
 
     @Id
@@ -28,6 +25,8 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "client")
+    @Setter(value = AccessLevel.NONE)
     private List<Order> orders = new ArrayList<>();
+
 
 }
