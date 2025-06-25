@@ -1,4 +1,4 @@
-package com.devsuperior.dscommerce.controllers.exceptions;
+package com.devsuperior.dscommerce.controllers.handlers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
