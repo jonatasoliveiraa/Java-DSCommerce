@@ -2,6 +2,7 @@ package com.devsuperior.dscommerce.mapper;
 
 
 import com.devsuperior.dscommerce.dto.ProductDTO;
+import com.devsuperior.dscommerce.dto.ProductMinDTO;
 import com.devsuperior.dscommerce.entities.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -14,6 +15,8 @@ public interface ProductConverter {
     ProductConverter CONVERTER = Mappers.getMapper(ProductConverter.class);
 
     ProductDTO toDTO(Product product);
+
+    ProductMinDTO toMinDTO(Product product);
 
     Product toEntity(ProductDTO productDTO);
 

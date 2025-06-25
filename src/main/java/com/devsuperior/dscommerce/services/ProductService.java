@@ -1,6 +1,7 @@
 package com.devsuperior.dscommerce.services;
 
 import com.devsuperior.dscommerce.dto.ProductDTO;
+import com.devsuperior.dscommerce.dto.ProductMinDTO;
 import com.devsuperior.dscommerce.entities.Product;
 import com.devsuperior.dscommerce.mapper.ProductConverter;
 import com.devsuperior.dscommerce.repositories.ProductRepository;
@@ -22,9 +23,9 @@ public class ProductService {
     private ProductRepository repository;
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable) {
         Page<Product> productPage = repository.searchByName(name, pageable);
-        return productPage.map(ProductConverter.CONVERTER::toDTO);
+        return productPage.map(ProductConverter.CONVERTER::toMinDTO);
     }
 
     @Transactional(readOnly = true)
