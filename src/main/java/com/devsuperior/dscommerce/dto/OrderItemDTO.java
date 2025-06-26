@@ -12,13 +12,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public class OrderItemDTO {
 
-    private Long id;
+    private Long productId;
     private String name;
     private Double price;
     private Integer quantity;
 
     public OrderItemDTO(OrderItem entity) {
-        this.id = entity.getProduct().getId();
+        this.productId = entity.getProduct().getId();
         this.name = entity.getProduct().getName();
         this.price = entity.getPrice();
         this.quantity = entity.getQuantity();
