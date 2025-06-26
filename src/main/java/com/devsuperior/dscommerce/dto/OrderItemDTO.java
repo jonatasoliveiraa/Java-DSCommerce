@@ -16,12 +16,14 @@ public class OrderItemDTO {
     private String name;
     private Double price;
     private Integer quantity;
+    private String imgUrl;
 
     public OrderItemDTO(OrderItem entity) {
-        this.productId = entity.getProduct().getId();
-        this.name = entity.getProduct().getName();
-        this.price = entity.getPrice();
-        this.quantity = entity.getQuantity();
+        productId = entity.getProduct().getId();
+        name = entity.getProduct().getName();
+        price = entity.getPrice();
+        quantity = entity.getQuantity();
+        imgUrl = entity.getProduct().getImgUrl();
     }
 
     public Double getSubtotal() {
