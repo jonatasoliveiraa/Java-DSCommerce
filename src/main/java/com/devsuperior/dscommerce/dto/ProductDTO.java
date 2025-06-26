@@ -2,10 +2,7 @@ package com.devsuperior.dscommerce.dto;
 
 import com.devsuperior.dscommerce.entities.Category;
 import com.devsuperior.dscommerce.entities.Product;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +24,7 @@ public class ProductDTO {
     @NotBlank(message = "Campo requerido")
     @Size(min = 10, message = "O campo deve conter no minimo 10 caracteres")
     private String description;
+    @NotNull(message = "Campo requerido")
     @Positive(message = "Inserir apenas valores positivos")
     private Double price;
     private String imgUrl;
