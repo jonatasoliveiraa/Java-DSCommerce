@@ -16,6 +16,7 @@ public class OrderItem {
 
     @EmbeddedId
     private OrderItemPK id = new OrderItemPK();
+    
     @Getter
     @Setter
     private Integer quantity;
